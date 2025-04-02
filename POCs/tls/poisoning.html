@@ -1,0 +1,269 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Content-Type: text/html; charset=UTF-8
+Content-Length: 9368
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="assets\icon.png">
+    <title>FDAAutomate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        h4 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            font-size: 18px;
+            width: 150px;
+            padding: 10px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            width: 80%;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .form-group {
+            width: 80%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+	<h1>Enter arguments for the script</h1>
+    <h3>If none are given, default values will be used</h3>
+    <div class="form-group">
+        <h4>Regulation number</h4>
+		<div style="display: flex;">
+			<input id="regulation-number" type="text" placeholder="for example: 878.4300"/>
+			<h1 id="regulation_number_input_tag" style=font-size:20px>...</h1>
+		</div>
+    </div>
+    <div class="form-group">
+        <h4>Product Code</h4>
+		<div style="display: flex;">
+			<input id="product-code" type="text" placeholder="for example: NEU"/>
+			<h1 id="product_code_input_tag" style=font-size:20px>...</h1>
+		</div>
+    </div>
+    <div class="form-group">
+        <h4>Device limit</h4>
+		<div style="display: flex;">
+			<input id="limit" type="text" placeholder="5" />
+			<h1 id="limit_input_tag" style=font-size:20px>...</h1>
+		</div>
+    </div>
+    <div class="form-group">
+        <h4>Max iterations</h4>
+		<div style="display: flex;">
+			<input id="max-iterations" type="text" placeholder="5" />
+			<h1 id="max_iterations_input_tag" style=font-size:20px>...</h1>
+		</div>
+    </div>
+    <div class="form-group">
+        <h4>Verbosity</h4>
+        <input type="range" id="verbosity" min="0" max="2" value="0"/>
+        <a id="verbosity_value">None</a>
+    </div>
+    <div class="form-group">
+        <h4>Export to CSV</h4>
+        <input type="checkbox" id="export-csv" checked />
+    </div>
+    <button id="run-script" type="button" onclick="submitForm()">Run Code</button>
+    <h4 id="output-label">Output:</h4>
+	
+    <pre id="script-output"></pre>
+	<div id="loading" style="display: none; position: absolute; height: 100%; width: 100%;">
+		<img src="assets\loading.gif" alt="Loading..." style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 9999;">
+	</div>
+        <script>
+		
+		const regulation_number_tag = document.getElementById("regulation_number_input_tag");
+		const product_code_tag = document.getElementById("product_code_input_tag");
+		const limit_tag = document.getElementById("limit_input_tag");
+		const max_iterations_tag = document.getElementById("max_iterations_input_tag");
+		const regulation_number = document.getElementById('regulation-number');
+        const product_code = document.getElementById('product-code');
+        const limit = document.getElementById('limit');
+        const max_iterations = document.getElementById('max-iterations');
+		
+		const REGULATION_NUMBER = 0;
+		const PRODUCT_CODE = 1;
+		const LIMIT = 2;
+		const MAX_ITERATIONS = 3;
+		
+		
+		
+		function isValidField(field, data) {
+			var valid = false;
+			if ( field === REGULATION_NUMBER) {
+				valid = /\d{3}\.\d{4}/.test(data) && data.length === 8;
+			} else if (field === PRODUCT_CODE) {
+				valid = /^[A-Z]{3}$/.test(data);
+			} else if (field === LIMIT) { 
+				valid = /^\d+$/.test(data);
+			} else if (field === MAX_ITERATIONS) {
+				valid = /^\d+$/.test(data) || data === "-1";
+			}
+			
+			return valid;
+		}
+		
+		regulation_number.addEventListener("input", function(){
+			const regulation_number_value = regulation_number.value;
+			const product_code_value = product_code.value;
+			var regulation_number_valid = isValidField(REGULATION_NUMBER, regulation_number.value);
+			var product_code_valid = isValidField(PRODUCT_CODE, product_code.value);
+			var regulation_number_mark = '...';
+			var product_code_mark = '...';
+			
+			if (regulation_number_valid && product_code_valid){
+				regulation_number_mark = '...';
+				product_code_mark = '...';
+			} else if ((regulation_number_valid && product_code_value === '')||(product_code_valid && regulation_number_value === '')) {
+				regulation_number_mark = '...';
+				product_code_mark = '...';
+			}
+			
+			product_code_tag.innerHTML = regulation_number_mark;
+			regulation_number_tag.innerHTML = product_code_mark;
+			
+		});
+		product_code.addEventListener("input", function(){
+			const regulation_number_value = regulation_number.value;
+			const product_code_value = product_code.value;
+			var regulation_number_valid = isValidField(REGULATION_NUMBER, regulation_number.value);
+			var product_code_valid = isValidField(PRODUCT_CODE, product_code.value);
+			var regulation_number_mark = '...';
+			var product_code_mark = '...';
+			
+			if (regulation_number_valid && product_code_valid){
+				regulation_number_mark = '...';
+				product_code_mark = '...';
+			}
+			else if ((regulation_number_valid && product_code_value === '')||(product_code_valid && regulation_number_value === '')) {
+				regulation_number_mark = '...';
+				product_code_mark = '...';
+			}
+			product_code_tag.innerHTML = regulation_number_mark;
+			regulation_number_tag.innerHTML = product_code_mark;
+		});
+		limit.addEventListener("input", function(){
+			var valid_input = isValidField(LIMIT, limit.value);
+			if (valid_input === true || limit.value === '')
+			    limit_tag.innerHTML = "...";
+			else
+			    limit_tag.innerHTML = "...";
+		});
+		max_iterations.addEventListener("input", function(){
+			var valid_input = isValidField(MAX_ITERATIONS, max_iterations.value);
+			if (valid_input === true || max_iterations.value === '')
+			    max_iterations_tag.innerHTML = "...";
+			else
+			    max_iterations_tag.innerHTML = "...";
+		});
+		
+		
+		
+        var verbosity = document.getElementById("verbosity");
+        verbosity.addEventListener('input', function() {
+        	const values = ["None", "Mid", "All"];
+            const message = values[(verbosity.value) % values.length];
+            document.getElementById("verbosity_value").innerHTML = message;
+        });
+        function submitForm() {
+            const regulation_number = document.getElementById('regulation-number').value;
+            const product_code = document.getElementById('product-code').value;
+            const limit = document.getElementById('limit').value;
+            const max_iterations = document.getElementById('max-iterations').value;
+            const verbosity = document.getElementById('verbosity').value;
+			const export_csv = document.getElementById('export-csv').checked;
+
+			
+            const data = JSON.stringify({
+                regulation_number: regulation_number,
+                product_code: product_code,
+				limit: limit,
+				max_iterations: max_iterations,
+				verbosity: verbosity,
+				export_csv: export_csv
+            });
+			document.getElementById('loading').style.display = 'block';
+			
+			
+
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            })
+            .then(response => response.text())
+            .then(outputJsonRaw => {
+				document.getElementById('loading').style.display = 'none';
+                if (outputJsonRaw.substr(0,6) === "ERROR:")
+                {
+                    document.getElementById('script-output').innerText = outputJsonRaw;
+                    return NaN;
+                }
+				const outputJson = JSON.parse(outputJsonRaw);
+				let html = outputJson.HTML;
+				let userSessionId = outputJson.RANDOM;
+				
+				sessionStorage.setItem('userSessionId', userSessionId);
+                // Replace the current document with the new HTML content
+                document.open();
+                document.write(html);
+                document.close();
+            })
+            .catch((error) => {
+				document.getElementById('loading').style.display = 'none';
+				document.getElementById('script-output').innerText = 'Error: ' + error;
+            });
+        }
+    </script>
+
+</body>
+</html>

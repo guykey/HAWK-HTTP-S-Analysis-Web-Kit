@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{fbeb7b2a-acd8-42f2-b5ba-0b72509a428b}</ProjectGuid>
+    <RootNamespace>HAWKMAIN</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)includes;$(SolutionDir)\cryptopp;$(SolutionDir)wxWidget\include\msvc;$(ProjectDir)zlib;$(SolutionDir)wxWidget\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)libs;$(SolutionDir)wxWidget\lib\vc_x64_lib;$(SolutionDir)\cryptopp;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;Ws2_32.lib;cryptlib.lib;WinDivert.lib;zlibstatic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\HAWK_GUI\MainWindow.h" />
+    <ClInclude Include="..\HAWK_GUI\PacketCapturePanel.h" />
+    <ClInclude Include="..\HAWK_GUI\PortProxyPanel.h" />
+    <ClInclude Include="..\HAWK_GUI\ToolBar.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\ApplicationData.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\HTTP.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\HTTPSProxy.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\Protocol.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\ProxyServer.hpp" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\RegistryWriter.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\SessionHandlers.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\WinDivertDev.h" />
+    <ClInclude Include="..\HAWK_PROXY_SERVER\WSA.h" />
+    <ClInclude Include="..\HAWK_TLS\AsymetricCipher.h" />
+    <ClInclude Include="..\HAWK_TLS\Certificate.h" />
+    <ClInclude Include="..\HAWK_TLS\CipherSuite.h" />
+    <ClInclude Include="..\HAWK_TLS\Communicator.h" />
+    <ClInclude Include="..\HAWK_TLS\constants.hpp" />
+    <ClInclude Include="..\HAWK_TLS\HashFunction.h" />
+    <ClInclude Include="..\HAWK_TLS\SymetricCipher.h" />
+    <ClInclude Include="..\HAWK_TLS\tls.h" />
+    <ClInclude Include="..\HAWK_TLS\TlsRecords.h" />
+    <ClInclude Include="..\HAWK_TLS\tlsServer.h" />
+    <ClInclude Include="..\HAWK_WIRESHARK\PacketCapture.h" />
+    <ClInclude Include="..\HAWK_WIRESHARK\ProtocolDB.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\HAWK_GUI\MainWindow.cpp" />
+    <ClCompile Include="..\HAWK_GUI\PacketCapturePanel.cpp" />
+    <ClCompile Include="..\HAWK_GUI\PortProxyPanel.cpp" />
+    <ClCompile Include="..\HAWK_GUI\ToolBar.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\ApplicationData.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\HTTP.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\HTTPSProxy.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\Protocol.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\ProxyServer.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\RegistryWriter.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\SessionHandlers.cpp" />
+    <ClCompile Include="..\HAWK_PROXY_SERVER\WinDivertDev.cpp" />
+    <ClCompile Include="..\HAWK_TLS\AsymetricCipher.cpp" />
+    <ClCompile Include="..\HAWK_TLS\Certificate.cpp" />
+    <ClCompile Include="..\HAWK_TLS\CipherSuite.cpp" />
+    <ClCompile Include="..\HAWK_TLS\Communicator.cpp" />
+    <ClCompile Include="..\HAWK_TLS\constants.cpp" />
+    <ClCompile Include="..\HAWK_TLS\HashFunction.cpp" />
+    <ClCompile Include="..\HAWK_TLS\SymetricCipher.cpp" />
+    <ClCompile Include="..\HAWK_TLS\tls.cpp" />
+    <ClCompile Include="..\HAWK_TLS\TlsRecords.cpp" />
+    <ClCompile Include="..\HAWK_TLS\tlsServer.cpp" />
+    <ClCompile Include="..\HAWK_WIRESHARK\PacketCapture.cpp" />
+    <ClCompile Include="..\HAWK_WIRESHARK\ProtocolDB.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HAWK_MAIN.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\4.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

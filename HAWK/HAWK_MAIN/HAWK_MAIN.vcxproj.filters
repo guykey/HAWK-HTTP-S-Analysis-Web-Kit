@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="PROXY_SERVER">
+      <UniqueIdentifier>{1059168d-0ace-4cfc-a6ff-139ed50072be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TLS">
+      <UniqueIdentifier>{8fd43ef0-487d-49a8-950e-424b0d3027f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WIRESHARK">
+      <UniqueIdentifier>{9fa11dfb-3590-4711-85b9-6a41fe2dfd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HAWK_GUI">
+      <UniqueIdentifier>{8d3f04af-b8d3-46d3-9386-4283a2b3762c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\HAWK_WIRESHARK\PacketCapture.h">
+      <Filter>WIRESHARK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\AsymetricCipher.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\Certificate.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\CipherSuite.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\Communicator.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\constants.hpp">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\HashFunction.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\SymetricCipher.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\tls.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\TlsRecords.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_TLS\tlsServer.h">
+      <Filter>TLS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\Protocol.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\RegistryWriter.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\SessionHandlers.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\WinDivertDev.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\WSA.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\HTTPSProxy.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\HTTP.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_GUI\ToolBar.h">
+      <Filter>HAWK_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_GUI\PortProxyPanel.h">
+      <Filter>HAWK_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_GUI\PacketCapturePanel.h">
+      <Filter>HAWK_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_GUI\MainWindow.h">
+      <Filter>HAWK_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\ProxyServer.hpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_PROXY_SERVER\ApplicationData.h">
+      <Filter>PROXY_SERVER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HAWK_WIRESHARK\ProtocolDB.h">
+      <Filter>WIRESHARK</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\HAWK_WIRESHARK\PacketCapture.cpp">
+      <Filter>WIRESHARK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\AsymetricCipher.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\Certificate.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\CipherSuite.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\Communicator.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\constants.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\HashFunction.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\SymetricCipher.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\tls.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\TlsRecords.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_TLS\tlsServer.cpp">
+      <Filter>TLS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\Protocol.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\ProxyServer.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\RegistryWriter.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\SessionHandlers.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\WinDivertDev.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\HTTPSProxy.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\HTTP.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_GUI\ToolBar.cpp">
+      <Filter>HAWK_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_GUI\PortProxyPanel.cpp">
+      <Filter>HAWK_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_GUI\PacketCapturePanel.cpp">
+      <Filter>HAWK_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_GUI\MainWindow.cpp">
+      <Filter>HAWK_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_PROXY_SERVER\ApplicationData.cpp">
+      <Filter>PROXY_SERVER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HAWK_WIRESHARK\ProtocolDB.cpp">
+      <Filter>WIRESHARK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HAWK_MAIN.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\resources\4.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

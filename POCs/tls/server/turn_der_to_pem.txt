@@ -1,0 +1,2 @@
+run this:
+openssl x509 -inform DER -in certificate.der -out certificate.pem -outform PEM
