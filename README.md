@@ -28,9 +28,6 @@ HAWK is a C++ GUI application built using Visual Studio. To compile and run it:
 3. Build the project using `Build -> Build Solution` (make sure to build the `HAWK_MAIN` project).
 4. Run the application from Visual Studio.
 
-## Documentation
-Further documentation, reaserch and information is listed here:
-[HAWK Project Documentation](https://drive.google.com/drive/folders/1Q2v-WCJHIUktr5ynlPXBoItn3EPqOW5B)
 
 ## Dependencies
 All dependencies are located in the repository.
